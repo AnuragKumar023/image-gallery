@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #89b42b); */
+    color: #fff;
+    background-image: radial-gradient( circle farthest-corner at 12.9% 20.3%,  rgba(255,162,104,1) 0%, rgba(254,80,147,1) 41% );
+}
+
+.head {
+    text-align: center;
+    margin-top: 70px;
+    text-decoration: underline;
+    /* color: gainsboro; */
+    color: white;
+}
+
+.gallery-container {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.gallery-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-container::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.gallery-container::-webkit-scrollbar-thumb {
+    /* background: #00bf72; */
+    background-color: pink;
+    border-radius: 10px;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(72, 110, 107, 0.5); */
+    box-shadow: 0 4px 8px rgba(242, 126, 166, 0.5);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(39, 148, 121, 0.8); */
+    background-color: rgba(240, 159, 207, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    /* color: gainsboro; */
+    color: white;
+    font-size: 20px;
+    word-spacing: 3px;
+}
+
+footer span {
+    text-decoration: underline;
+}
+
+
+@media (width<64rem) {
+    .gallery-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
